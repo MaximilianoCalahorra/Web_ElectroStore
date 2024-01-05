@@ -4,6 +4,8 @@ trabajo práctico de la materia de Seminario de Lenguajes (PHP) de la carrera de
 
 **El enlace al sitio web es [electrostoreweb](https://electrostoreweb.000webhostapp.com). También se encuentra en la descripción del repositorio.**
 
+**En el repositorio también se incluye el script de la base de datos y un diagrama que representa la organización del proyecto en relación a las carpetas y archivos que contiene**.
+
 El sitio web cumple con las consignas de ese trabajo práctico, aunque me permití darle algunas funcionalidades extras que consideré que enriquecían el proyecto:
 - División del sitio web en modelos, vistas y controladores.
 - Conexión con una base de datos con tablas de administradores, clientes, productos y sucursales.
