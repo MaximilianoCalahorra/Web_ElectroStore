@@ -1,0 +1,369 @@
+/* ------ Variables globales ------ */
+:root
+{
+	--color-inicial-boton: #FFA000;
+	--color-final-boton: #FF5000;
+}
+
+/* ------ Body ------ */
+.body
+{
+	grid-template-columns: 120px 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-gap: 1em;
+	grid-template-areas: "header			header"
+						 "nav-pagina-web	nav-sitio-web"
+						 "main				main"
+						 "footer			footer";
+}
+
+/* ------ Barra de navegación del sitio web ------ */
+/* Estilo para la lista */
+.nav-sitio-web__ul
+{			
+	list-style: none; /* Elimina los ítems de las listas */
+}
+
+/* ------ Barra de navegación de la página web ------ */
+/* Estilo para la barra de navegación */
+.nav-pagina-web
+{
+	grid-area: nav-pagina-web;
+	background-color: var(--color-principal);
+	color: var(--color-enlaces);
+	position: sticky;
+	top: 0;
+	z-index: 10; /* Lo defino para que cuando hago scroll y el nav alcance la posición de las imágenes el nav se superponga a estas */
+}
+
+/* Estilos para el botón */
+.nav-pagina-web__button
+{
+	padding: .33em;
+	margin: 6px 0 0 5px; /* (Top/Right/Bottom/Left) 'Baja' 6px el texto, "alineándolo" verticalmente con la barra de navegación del sitio web */
+	cursor: pointer;
+	width: 10%; /* Solo ocupa el 10% del nav-pagina-web__button-container */
+}
+
+/* Estilo para el contenedor de los ítems de la lista */
+.nav-pagina-web__li-container
+{
+	display: none;
+}
+
+/* Estilos para los enlaces del listado */
+.nav-pagina-web__ul a
+{
+	text-decoration: none;
+	color: var(--color-enlaces);
+}
+
+/* Estilos para los li del listado */
+.nav-pagina-web__li
+{
+	padding: 10px;
+	cursor: pointer;
+}
+
+/* Estilos para los íconos de los li del listado */
+.nav-pagina-web__li i
+{
+	width: 1em;
+	box-sizing: border-box;
+	margin-right: .8em; /* Distancia el ícono del enlace */
+}
+
+/* Estilos para el contenedor de enlaces */
+.nav-pagina-web__ul:hover > .nav-pagina-web__li-container
+{
+	display: block; /* Aparecen los enlaces */
+	position: absolute; /* Cede su espacio en el DOM y se superpone al contenido siguiente */
+	background-color: var(--color-principal);
+	width: 100%;
+}
+
+/* Estilo para el botón cuando se hace hover en él */
+.nav-pagina-web__button:hover > i
+{
+	color: var(--color-enlaces-hover);
+}
+
+/* Estilos para los 'i' y los 'a' dentro de li cuando se le hace hover a los li con clase nav-pagina-web__li */
+.nav-pagina-web__li:hover > i,
+.nav-pagina-web__li:hover > a
+{
+	color: var(--color-enlaces-hover);
+}
+
+/* ------ Main ------ */
+/* Estilos para el main */
+.main
+{
+	grid-area: main;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	grid-gap: 1em;
+	grid-template-areas: "celulares"
+						 "computadoras"
+						 "tablets";
+}
+
+/* Estilos para la sección de celulares */
+.main__section:first-child
+{
+	grid-area: celulares;
+}
+
+/* Estilos para la sección de computadoras */
+.main__section:nth-child(2)
+{
+	grid-area: computadoras;
+}
+
+/* Estilos para la sección de tablets */
+.main__section:nth-child(3)
+{
+	grid-area: tablets;
+}
+
+/* Estilos para el contenedor de los productos y su título */
+.main__section
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(13, auto);
+	grid-gap: 1em;
+	grid-template-areas: "titulo"
+						 "producto-1"
+						 "producto-2"
+						 "producto-3"
+						 "producto-4"
+						 "producto-5"
+						 "producto-6"
+						 "producto-7"
+						 "producto-8"
+						 "producto-9"
+						 "producto-10"
+						 "producto-11"
+						 "producto-12";
+}
+
+/* Estilo para el título de la sección de productos */
+.section__h4
+{
+	grid-area: titulo;
+}
+
+/* Estilo para el primer producto */
+.article__producto:nth-child(2)
+{
+	grid-area: producto-1;
+}
+
+/* Estilo para el segundo producto */
+.article__producto:nth-child(3)
+{
+	grid-area: producto-2;
+}
+
+/* Estilo para el tercer producto */
+.article__producto:nth-child(4)
+{
+	grid-area: producto-3;
+}
+
+/* Estilo para el cuarto producto */
+.article__producto:nth-child(5)
+{
+	grid-area: producto-4;
+}
+
+/* Estilo para el quinto producto */
+.article__producto:nth-child(6)
+{
+	grid-area: producto-5;
+}
+
+/* Estilo para el sexto producto */
+.article__producto:nth-child(7)
+{
+	grid-area: producto-6;
+}
+
+/* Estilo para el séptimo producto */
+.article__producto:nth-child(8)
+{
+	grid-area: producto-7;
+}
+
+/* Estilo para el octavo producto */
+.article__producto:nth-child(9)
+{
+	grid-area: producto-8;
+}
+
+/* Estilo para el noveno producto */
+.article__producto:nth-child(10)
+{
+	grid-area: producto-9;
+}
+
+/* Estilo para el décimo producto */
+.article__producto:nth-child(11)
+{
+	grid-area: producto-10;
+}
+
+/* Estilo para el undécimo producto */
+.article__producto:nth-child(12)
+{
+	grid-area: producto-11;
+}
+
+/* Estilo para el décimosegundo producto */
+.article__producto:nth-child(13)
+{
+	grid-area: producto-12;
+}
+
+/* Estilos para cada producto */
+.article__producto
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(8, auto);
+	grid-gap: .5em;
+	grid-template-areas: "imagen"
+						 "marca"
+						 "modelo"
+						 "precio"
+						 "stock"
+						 "titulo-descripcion"
+						 "descripcion"
+						 "boton";
+}
+
+/* Estilos para cada producto cuando se hace hover en él */
+.article__producto:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+/* Estilos para la imagen de cada producto */
+.producto__imagen
+{
+	grid-area: imagen;
+	max-width: 100%;
+	display: flex;
+	justify-self: center; /* Centra la imagen horizontalmente en su contenedor */
+}
+
+/* Estilos para la marca de cada producto */
+.producto__marca
+{
+	grid-area: marca;
+	font-size: 18px;
+}
+
+/* Estilos para el modelo de cada producto */
+.producto__modelo
+{
+	grid-area: modelo;
+	font-size: 18px;
+}
+
+/* Estilos para el precio de cada producto */
+.producto__precio
+{
+	grid-area: precio;
+	font-size: 18px;
+	color: var(--color-principal);
+}
+
+/* Estilos para el stock disponible de cada producto */
+.producto__stock
+{
+	grid-area: stock;
+	font-size: 18px;
+}
+
+/* Estilos para el título de la descripción de cada producto */
+.producto__titulo-descripcion
+{
+	grid-area: titulo-descripcion;
+	font-size: 18px;
+}
+
+/* Estilos para la descripción de cada producto */
+.producto__descripcion
+{
+	grid-area: descripcion;
+}
+
+/* Estilos para el botón de compra de cada producto */
+.boton-compra
+{
+	width: 10em;
+	padding: .7em;
+	grid-area: boton;
+}
+
+.form-compra
+{
+	text-align: center;
+}
+
+/* ------ Layouts responsive design ------ */
+@media only screen and (min-width: 515px)
+{
+	.body
+	{
+		grid-template-columns: 140px 1fr;
+	}
+
+	/* Estilos para cada sección de productos */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(7, auto);
+		grid-template-areas: "titulo		titulo"
+							 "producto-1 	producto-2"
+							 "producto-3	producto-4"
+							 "producto-5	producto-6"
+							 "producto-7	producto-8"
+							 "producto-9	producto-10"
+							 "producto-11	producto-12";
+	}
+}
+
+@media only screen and (min-width: 715px)
+{
+	.body
+	{
+		grid-template-columns: 150px 1fr;
+	}
+}
+
+@media only screen and (min-width: 915px)
+{
+	.body
+	{
+		grid-template-columns: 170px 1fr;
+	}
+
+	/* Estilos para cada sección de productos */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(5, auto);
+		grid-template-areas: "titulo		titulo			titulo"
+							 "producto-1 	producto-2		producto-3"
+							 "producto-4	producto-5		producto-6"
+							 "producto-7	producto-8		producto-9"
+							 "producto-10	producto-11		producto-12";
+	}
+}

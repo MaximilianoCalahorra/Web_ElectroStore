@@ -1,0 +1,259 @@
+/* ------ Body ------ */
+.body
+{
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "header"
+						 "nav-sitio-web"
+						 "main"
+						 "aside"
+						 "footer";
+}
+
+/* ------ Main ------ */
+.main
+{
+	grid-area: main;
+}
+
+/* Estilos para el contenedor de las sucursales y el título 'sucursales' */
+.main__section
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(19, auto);
+	grid-gap: 1em;
+	grid-template-areas: "titulo"
+						 "adrogue"
+						 "avellaneda"
+						 "canning"
+						 "cañuelas"
+						 "ezeiza"
+						 "lanus"
+						 "lomas-de-zamora"
+						 "balvanera"
+						 "belgrano"
+						 "caballito"
+						 "chacarita"
+						 "constitucion"
+						 "liniers"
+						 "palermo"
+						 "puerto-madero"
+						 "recoleta"
+						 "retiro"
+						 "villa-urquiza";
+}
+
+/* Estilo para el título 'Sucursales' */
+.section__h4
+{
+	grid-area: titulo;
+}
+
+/* Estilo para la primera sucursal */
+.article__sucursal:nth-child(2)
+{
+	grid-area: adrogue;
+}
+
+/* Estilo para la segunda sucursal */
+.article__sucursal:nth-child(3)
+{
+	grid-area: avellaneda;
+}
+
+/* Estilo para la tercera sucursal */
+.article__sucursal:nth-child(4)
+{
+	grid-area: canning;
+}
+
+/* Estilo para la cuarta sucursal */
+.article__sucursal:nth-child(5)
+{
+	grid-area: cañuelas;
+}
+
+/* Estilo para la quinta sucursal */
+.article__sucursal:nth-child(6)
+{
+	grid-area: ezeiza;
+}
+
+/* Estilo para la sexta sucursal */
+.article__sucursal:nth-child(7)
+{
+	grid-area: lanus;
+}
+
+/* Estilo para la séptima sucursal */
+.article__sucursal:nth-child(8)
+{
+	grid-area: lomas-de-zamora;
+}
+
+/* Estilo para la octava sucursal */
+.article__sucursal:nth-child(9)
+{
+	grid-area: balvanera;
+}
+
+/* Estilo para la novena sucursal */
+.article__sucursal:nth-child(10)
+{
+	grid-area: belgrano;
+}
+
+/* Estilo para la décima sucursal */
+.article__sucursal:nth-child(11)
+{
+	grid-area: caballito;
+}
+
+/* Estilo para la undécima sucursal */
+.article__sucursal:nth-child(12)
+{
+	grid-area: chacarita;
+}
+
+/* Estilo para la décimosegunda sucursal */
+.article__sucursal:nth-child(13)
+{
+	grid-area: constitucion;
+}
+
+/* Estilo para la décimotercera sucursal */
+.article__sucursal:nth-child(14)
+{
+	grid-area: liniers;
+}
+
+/* Estilo para la décimocuarta sucursal */
+.article__sucursal:nth-child(15)
+{
+	grid-area: palermo;
+}
+
+/* Estilo para la décimoquinta sucursal */
+.article__sucursal:nth-child(16)
+{
+	grid-area: puerto-madero;
+}
+
+/* Estilo para la décimosexta sucursal */
+.article__sucursal:nth-child(17)
+{
+	grid-area: recoleta;
+}
+
+/* Estilo para la decimoséptima sucursal */
+.article__sucursal:nth-child(18)
+{
+	grid-area: retiro;
+}
+
+/* Estilo para la primera sucursal */
+.article__sucursal:nth-child(19)
+{
+	grid-area: villa-urquiza;
+}
+
+/* Estilos para el contenedor de la sucursal */
+.article__sucursal
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr auto;
+	grid-gap: .5em;
+	grid-template-areas: "imagen"
+						 "data";
+}
+
+/* Estilos para cada sucursal cuando se hace hover en ella */
+.article__sucursal:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+/* Estilo para la imagen de la sucursal */
+.sucursal__imagen
+{
+	grid-area: imagen;
+	max-width: 100%;
+	display: flex;
+	justify-self: center; /* Centra la imagen horizontalmente en su contenedor */
+}
+
+/* Estilo para la data de la sucursal */
+.sucursal__data
+{
+	grid-area: data;
+}
+
+/* ------ Aside ------ */
+.aside
+{
+	grid-area: aside;
+}
+
+/* Estilos para el contenedor de los logos de las empresas que vendemos */
+.aside__marcas-imagen-container
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 1em 0;
+}
+
+/* Estilo para los logos de las empresas que vendemos */
+.aside__marcas-imagen
+{
+	margin: .5em 0; /* Da .5em de margen vertical entre logos cuando se genera más de 1 fila */
+}
+
+/* ------ layouts responsive design ------ */
+@media only screen and (min-width: 515px)
+{
+	/* Estilos para la sección de sucursales */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(10, auto);
+		grid-template-areas: "titulo			titulo"
+							 "adrogue			avellaneda"
+							 "canning			cañuelas"
+							 "ezeiza			lanus"
+							 "lomas-de-zamora	balvanera"
+							 "belgrano			caballito"
+							 "chacarita			constitucion"
+							 "liniers			palermo"
+							 "puerto-madero		recoleta"
+							 "retiro			villa-urquiza";
+	}
+
+	/* Estilo para el contenedor de cada sucursal */
+	.article__sucursal
+	{
+		margin: 0; /* Anula el margin top y bottom dado en el layout mobile */
+	}
+}
+
+@media only screen and (min-width: 915px)
+{
+	/* Estilos para la sección de sucursales */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(7, auto);
+		grid-template-areas: "titulo			titulo		titulo"
+							 "adrogue			avellaneda	canning"
+							 "cañuelas			ezeiza		lanus"
+							 "lomas-de-zamora	balvanera	belgrano"
+							 "caballito			chacarita	constitucion"
+							 "liniers			palermo		puerto-madero"
+							 "recoleta			retiro		villa-urquiza";	
+	}
+}

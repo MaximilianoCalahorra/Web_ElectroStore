@@ -1,0 +1,190 @@
+.body
+{
+	margin-bottom: 2em;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "header"
+						 "nav-sitio-web"
+						 "main";
+}
+
+.main
+{
+	grid-area: main;
+}
+
+.main__section
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(13, auto);
+	grid-gap: 1em;
+	grid-template-areas: "titulo"
+						 "cliente-1"
+						 "cliente-2"
+						 "cliente-3"
+						 "cliente-4"
+						 "cliente-5"
+						 "cliente-6"
+						 "cliente-7"
+						 "cliente-8"
+						 "cliente-9"
+						 "cliente-10"
+						 "cliente-11"
+						 "cliente-12";
+}
+
+.section__h4
+{
+	grid-area: titulo;
+}
+
+.article__cliente:first-child
+{
+	grid-area: cliente-1;
+}
+
+.article_cliente:nth-child(2)
+{
+	grid-area: cliente-2;
+}
+
+.article_cliente:nth-child(3)
+{
+	grid-area: cliente-3;
+}
+
+.article_cliente:nth-child(4)
+{
+	grid-area: cliente-4;
+}
+
+.article_cliente:nth-child(5)
+{
+	grid-area: cliente-5;
+}
+
+.article_cliente:nth-child(6)
+{
+	grid-area: cliente-6;
+}
+
+.article_cliente:nth-child(7)
+{
+	grid-area: cliente-7;
+}
+
+.article_cliente:nth-child(8)
+{
+	grid-area: cliente-8;
+}
+
+.article_cliente:nth-child(9)
+{
+	grid-area: cliente-9;
+}
+
+.article_cliente:nth-child(10)
+{
+	grid-area: cliente-10;
+}
+
+.article_cliente:nth-child(11)
+{
+	grid-area: cliente-11;
+}
+
+.article_cliente:nth-child(12)
+{
+	grid-area: cliente-12;
+}
+
+.article__cliente
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(6, auto);
+	grid-gap: .5em;
+	grid-template-areas: "usuario"
+                         "contraseña"
+						 "nombre"
+                         "apellido"
+                         "mail"
+                         "form";
+}
+
+.article__cliente:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+.cliente__usuario
+{
+    grid-area: usuario;
+}
+
+.cliente__contraseña
+{
+    grid-area: contraseña;
+}
+
+.cliente__nombre
+{
+    grid-area: nombre;
+}
+
+.cliente__apellido
+{
+    grid-area: apellido;
+}
+
+.cliente__mail
+{
+    grid-area: mail;
+}
+
+.cliente__form
+{
+    grid-area: form;
+}
+
+@media only screen and (min-width: 615px)
+{
+	/* Estilos para la sección de sucursales */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(7, auto);
+		grid-template-areas: "titulo			titulo"
+							 "cliente-1			cliente-2"
+							 "cliente-3			cliente-4"
+							 "cliente-5			cliente-6"
+							 "cliente-7	        cliente-8"
+							 "cliente-9			cliente-10"
+							 "cliente-11		cliente-12";
+	}
+
+	/* Estilo para el contenedor de cada sucursal */
+	.article__cliente
+	{
+		margin: 0; /* Anula el margin top y bottom dado en el layout mobile */
+	}
+}
+
+@media only screen and (min-width: 915px)
+{
+	/* Estilos para la sección de sucursales */
+	.main__section
+	{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(5, auto);
+		grid-template-areas: "titulo		titulo		titulo"
+							 "cliente-1		cliente-2	cliente-3"
+							 "cliente-4		cliente-5	cliente-6"
+							 "cliente-7    	cliente-8	cliente-9"
+							 "cliente-10    cliente-11	cliente-12";	
+	}
+}

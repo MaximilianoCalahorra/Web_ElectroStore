@@ -1,0 +1,83 @@
+.body
+{
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "header"
+						 "nav-sitio-web"
+						 "main"
+						 "aside"
+						 "footer";
+}
+
+.main
+{
+	grid-area: main;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	grid-gap: 1em;
+	grid-template-areas: "novedad-1"
+						 "novedad-2"
+						 "novedad-3";
+}
+
+/* Estilos para los artículos de novedades */
+.section__article
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+}
+
+/* Estilo para la primera novedad */
+.section__article:first-child
+{
+	grid-area: novedad-1;
+}
+
+/* Estilo para la segunda novedad */
+.section__article:nth-child(2)
+{
+	grid-area: novedad-2;
+}
+
+/* Estilo para la tercera novedad */
+.section__article:last-child
+{
+	grid-area: novedad-3;
+}
+
+/* Estilo para los artículos de novedades cuando hay hover sobre alguno de ellos */
+.section__article:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+/* Estilos para el contenedor de las imágenes */
+.article__imagen-container
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 1em 0;
+}
+
+.aside
+{
+	grid-area: aside;
+}
+
+/* Estilos para el contenedor de los logos de las empresas que vendemos */
+.aside__marcas-imagen-container
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 1em 0;
+}
+
+/* Estilo para los logos de las empresas que vendemos */
+.aside__marcas-imagen
+{
+	margin: .5em 0; /* Da .5em de margen entre logos cuando se genera más de 1 fila */
+}

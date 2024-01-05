@@ -1,0 +1,399 @@
+.body
+{
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "header"
+						 "nav-sitio-web"
+						 "main"
+						 "footer";
+}
+
+.main
+{
+	grid-area: main;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-gap: 1em;
+	grid-template-areas: "titulo"
+						 "seccion-1"
+						 "seccion-2"
+						 "seccion-3";
+}
+
+/* Estilo para el título del contenido principal */
+.main__h4
+{
+	grid-area: titulo;
+}
+
+/* Estilo para la primera sección del contenido principal */
+.main__section:nth-child(2)
+{
+	grid-area: seccion-1;
+}
+
+/* Estilo para la segunda sección del contenido principal */
+.main__section:nth-child(3)
+{
+	grid-area: seccion-2;
+}
+
+/* Estilo para la tercera sección del contenido principal */
+.main__section:last-child
+{
+	grid-area: seccion-3;
+}
+
+
+/* Estilos para los tipos de ayuda */
+.article__ayuda
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	grid-gap: .2em;
+	grid-template-areas: "icono"
+						 "tipo-ayuda"
+						 "listado";
+
+}
+
+/* Estilo para los íconos y el título de cada tipo de ayuda */
+.fa-truck-ramp-box,
+.fa-money-bills,
+.fa-rotate-left,
+.ayuda__tipo
+{
+	text-align: center;
+	cursor: pointer; /* Cambio de tipo de cursor */
+}
+
+/* Estilo para los tipos de ayuda cuando se hace hover en ellos */
+.article__ayuda:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+/* Estilo para los íconos distintivos de cada tipo de ayuda */
+.article__ayuda .fa-truck-ramp-box,
+.article__ayuda .fa-money-bills,
+.article__ayuda .fa-rotate-left
+{
+	font-size: 2em;
+	color: var(--color-principal);
+	grid-area: icono;
+}
+
+/* Estilo para el título de cada tipo de ayuda */
+.article__ayuda .ayuda__tipo
+{
+	font-size: 1.5em;
+	color: var(--color-principal);
+	grid-area: tipo-ayuda;
+}
+
+/* Estilo para las respuestas de cada pregunta de cada tipo de ayuda */
+.article__ayuda p
+{
+	color: var(--color-principal);
+}
+
+/* Identado del contenido de cada sección */
+.entrega-de-productos__li,
+.pago-facturacion__pregunta,
+.cambio-devolucion__pregunta,
+.pago-facturacion__respuesta,
+.cambio-devolucion__respuesta
+{
+	margin-left: 1em;
+}
+
+.entrega-a-domicilio__pregunta,
+.retiro-en-sucursal__pregunta,
+.consultas-modificaciones-entrega__pregunta,
+.problemas-entrega__pregunta,
+.entrega-a-domicilio__respuesta,
+.retiro-en-sucursal__respuesta,
+.consultas-modificaciones-entrega__respuesta,
+.problemas-entrega__respuesta
+{
+	margin-left: 2em;
+}
+
+/* Estilo para todas las sublistas que se derivan de los 3 tipos de ayuda */
+.entrega-de-productos__ul,
+.pago-facturacion__ul,
+.cambio-devolucion__ul
+{
+	display: none; /* Las ocultamos cuando no se hace hover en el tipo de ayuda que corresponda para cada una */
+}
+
+/* Aplicando propiedades de grid a los listados, pero no display grid porque tienen que estar ocultas. Cuando hay hover se le da
+display grid a la/s lista/s que corresponda/n */
+.entrega-de-productos__ul,
+.entrega-a-domicilio__ul,
+.retiro-en-sucursal__ul,
+.consultas-modificaciones-entrega__ul,
+.problemas-entrega__ul,
+.pago-facturacion__ul,
+.cambio-devolucion__ul
+{
+	grid-area: listado;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+/* Estilos para el listado de 'entrega de productos' */
+.entrega-de-productos__ul
+{
+	grid-template-rows: repeat(8, auto);
+	grid-template-areas: "entrega-a-domicilio-titulo"
+						 "entrega-a-domicilio-listado"
+						 "retiro-en-sucursal-titulo"
+						 "retiro-en-sucursal-listado"
+						 "consultas-modificaciones-entrega-titulo"
+						 "consultas-modificaciones-entrega-listado"
+						 "problemas-entrega-titulo"
+						 "problemas-entrega-listado";
+}
+
+.entrega-a-domicilio__titulo
+{
+	grid-area: entrega-a-domicilio-titulo;
+}
+
+.entrega-a-domicilio__ul
+{
+	grid-area: entrega-a-domicilio-listado;
+}
+
+.retiro-en-sucursal__titulo
+{
+	grid-area: retiro-en-sucursal-titulo;
+}
+
+.retiro-en-sucursal__ul
+{
+	grid-area: retiro-en-sucursal-listado;
+}
+
+.consultas-modificaciones-entrega__titulo
+{
+	grid-area: consultas-modificaciones-entrega-titulo;
+}
+
+.consultas-modificaciones-entrega__ul
+{
+	grid-area: consultas-modificaciones-entrega-listado;
+}
+
+.problemas-entrega__titulo
+{
+	grid-area: problemas-entrega-titulo;
+}
+
+.problemas-entrega__ul
+{
+	grid-area: problemas-entrega-listado;
+}
+
+/* Estilos para el listado 'entrega a domicilio' */
+.entrega-a-domicilio__ul
+{
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "plazos-de-entrega"
+						 "prestaciones-servicio-entrega-a-domicilio"
+						 "quien-puede-recibir-la-compra"
+						 "no-estaba-al-momento-de-la-entrega"
+						 "rechazo-de-producto";
+}
+
+.entrega-a-domicilio__ayuda-1
+{
+	grid-area: plazos-de-entrega;
+}
+
+.entrega-a-domicilio__ayuda-2
+{
+	grid-area: prestaciones-servicio-entrega-a-domicilio;
+}
+
+.entrega-a-domicilio__ayuda-3
+{
+	grid-area: quien-puede-recibir-la-compra;
+}
+
+.entrega-a-domicilio__ayuda-4
+{
+	grid-area: no-estaba-al-momento-de-la-entrega;
+}
+
+.entrega-a-domicilio__ayuda-5
+{
+	grid-area: rechazo-de-producto;
+}
+
+/* Estilos para el listado de 'retiro en sucursal' */
+.retiro-en-sucursal__ul
+{
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "documentacion-a-llevar"
+						 "autorizacion-para-otra-persona"
+						 "plazos-de-entrega";
+}
+
+.retiro-en-sucursal__ayuda-1
+{
+	grid-area: documentacion-a-llevar;
+}
+
+.retiro-en-sucursal__ayuda-2
+{
+	grid-area: autorizacion-para-otra-persona;
+}
+
+.retiro-en-sucursal__ayuda-3
+{
+	grid-area: plazos-de-entrega;
+}
+
+/* Estilo para el listado de 'consultas y modificaciones de la entrega' */
+.consultas-modificaciones-entrega__ul
+{
+	grid-template-rows: auto;
+	grid-template-areas: "modificar-horario-fecha-domicilio-entrega";
+}
+
+.consultas-modificaciones-entrega__ayuda
+{
+	grid-area: modificar-horario-fecha-domicilio-entrega;
+}
+
+/* Estilo para el listado de 'problemas con la entrega' */
+.problemas-entrega__ul
+{
+	grid-template-rows: repeat(2, auto);
+	grid-template-areas: "menos-productos-recibidos"
+						 "sin-entrega";
+}
+
+.problemas-entrega__ayuda-1
+{
+	grid-area: menos-productos-recibidos;
+}
+
+.problemas-entrega__ayuda-2
+{
+	grid-area: sin-entrega;
+}
+
+/* Estilos para el listado de 'pago y facturación' */
+.pago-facturacion__ul
+{
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "obtener-factura-nota-de-credito"
+						 "error-cobro-compra"
+						 "tiempo-devolucion-en-tarjeta";
+}
+
+.pago-facturacion__ayuda-1
+{
+	grid-area: obtener-factura-nota-de-credito;
+}
+
+.pago-facturacion__ayuda-2
+{
+	grid-area: error-cobro-compra;
+}
+
+.pago-facturacion__ayuda-3
+{
+	grid-area: tiempo-devolucion-en-tarjeta;
+}
+
+/* Estilos para el listado de 'cambios y devoluciones' */
+.cambio-devolucion__ul
+{
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas: "plazos-devolucion-cambio-producto"
+						 "condiciones-cambio-devolucion"
+						 "que-debo-hacer-cambio-devolucion-producto-fallado"
+						 "que-debo-hacer-producto-incompleto"
+						 "como-cancelar-compra"
+						 "que-debo-hacer-producto-entregado-dañado";
+}
+
+.cambio-devolucion__ayuda-1
+{
+	grid-area: plazos-devolucion-cambio-producto;
+}
+
+.cambio-devolucion__ayuda-2
+{
+	grid-area: condiciones-cambio-devolucion;
+}
+
+.cambio-devolucion__ayuda-3
+{
+	grid-area: que-debo-hacer-cambio-devolucion-producto-fallado;
+}
+
+.cambio-devolucion__ayuda-4
+{
+	grid-area: que-debo-hacer-producto-incompleto;
+}
+
+.cambio-devolucion__ayuda-5
+{
+	grid-area: como-cancelar-compra;
+}
+
+.cambio-devolucion__ayuda-6
+{
+	grid-area: que-debo-hacer-producto-entregado-dañado;
+}
+
+/* Estilo para el contenido cada artículo por separado cuando se hace hover sobre él */
+.article__ayuda-1:hover > .entrega-de-productos__ul, .entrega-a-domicilio__ul, .retiro-en-sucursal__ul,
+.consultas-modificaciones-entrega__ul, .problemas-entrega__ul /* Afectamos todos estos listados */
+{	
+	display: grid; /* Aparece los listados indicados en el selector */
+}
+
+.article__ayuda-2:hover > .pago-facturacion__ul
+{
+	display: grid; /* Aparece el listado del tipo de ayuda 'pago y facturación' */
+}
+
+.article__ayuda-3:hover > .cambio-devolucion__ul
+{
+	display: grid; /* Aparece el listado del tipo de ayuda 'cambios y devoluciones' */
+}
+
+/* ------ Layouts responsive design */
+@media only screen and (min-width: 715px)
+{
+	.main
+	{
+		grid-template-columns: 1fr 1.1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas: "titulo		titulo"
+							 "seccion-1		seccion-1"
+							 "seccion-2		seccion-3";
+	}
+}
+
+@media only screen and (min-width: 915px)
+{
+	.main
+	{
+		grid-template-columns: 1.1fr 1fr 1.2fr;
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas: "titulo		titulo		titulo"
+							 "seccion-1		seccion-2 	seccion-3";
+	}
+}

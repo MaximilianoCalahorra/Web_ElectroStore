@@ -1,0 +1,84 @@
+:root
+{
+	--color-inicial-boton: #FFA000;
+	--color-final-boton: #FF5000;
+}
+
+.body
+{
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas: "header"
+						 "main";
+	text-align: center; /* Para centrar todo el contenido */
+}
+
+.main__div
+{
+	display: flex;
+	flex-flow: column wrap; /* Elementos distribuidos en formato de columna y uno debajo del otro */
+	align-content: center; /* Se centra su contenido verticalmente */
+	text-align: start;
+	margin-top: 1em;
+}
+
+.main__form
+{
+	display: flex;
+	flex-flow: column wrap; /* Elementos distribuidos en formato de columna y uno debajo del otro */
+}
+
+.form__div,
+.input, 
+.boton
+{
+	display: flex;
+	flex-wrap: wrap; /* Los input y button se acomodan debajo */
+	align-items: center; /* Se centra su contenido verticalmente */
+	justify-content: center; /* Se centra su contenido horizontalmente */
+}
+
+.input,
+.boton
+{
+	color: #FFFFFF;
+	background-color: var(--color-principal);
+	outline: none;
+	border: none;
+	border-radius: .5em; 
+	padding: .33em;
+	margin: .33em;
+}
+
+.input::placeholder
+{
+	color: #FFFFFF;
+}
+
+.input::selection
+{
+	background-color: #0080FF;
+}
+
+input[type="radio"]
+{
+	display: inline-block;
+	cursor: pointer;
+}
+
+input[type="date"]
+{
+	width: 235px;
+}
+
+input[type="file"]
+{
+	width: 235px;
+}
+
+.boton
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+

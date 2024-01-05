@@ -1,0 +1,105 @@
+.main
+{
+    display: grid;
+    grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-gap: 1em;
+	grid-template-areas: "producto_elegido"
+						 "formulario_pago";
+}
+
+.main__section:first-child
+{
+    grid-area: producto_elegido;
+}
+
+.main__section:nth-child(2)
+{
+    grid-area: formulario_pago;
+}
+
+.article__producto
+{
+	background-color: #FFFFFF;
+	padding: 2em;
+	border-radius: 1em;
+    margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(7, auto);
+	grid-gap: .5em;
+	grid-template-areas: "imagen"
+                         "producto_tipo"
+						 "marca"
+						 "modelo"
+						 "precio"
+						 "titulo-descripcion"
+						 "descripcion";
+}
+
+/* Estilos para cada producto cuando se hace hover en él */
+.article__producto:hover
+{
+	outline: .15em solid var(--color-principal);
+}
+
+/* Estilos para la imagen de cada producto */
+.producto__imagen
+{
+	grid-area: imagen;
+	max-width: 100%;
+	display: flex;
+	justify-self: center; /* Centra la imagen horizontalmente en su contenedor */
+}
+
+.producto__tipo
+{
+    grid-area: producto_tipo;
+    font-size: 18px;
+}
+
+/* Estilos para la marca de cada producto */
+.producto__marca
+{
+	grid-area: marca;
+	font-size: 18px;
+}
+
+/* Estilos para el modelo de cada producto */
+.producto__modelo
+{
+	grid-area: modelo;
+	font-size: 18px;
+}
+
+/* Estilos para el precio de cada producto */
+.producto__precio
+{
+	grid-area: precio;
+	font-size: 18px;
+	color: var(--color-principal);
+}
+
+/* Estilos para el título de la descripción de cada producto */
+.producto__titulo-descripcion
+{
+	grid-area: titulo-descripcion;
+	font-size: 18px;
+}
+
+/* Estilos para la descripción de cada producto */
+.producto__descripcion
+{
+	grid-area: descripcion;
+}
+
+@media only screen and (min-width: 715px)
+{
+    .main
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1em;
+        grid-template-areas: "producto_elegido" "formulario_pago";
+    }
+}

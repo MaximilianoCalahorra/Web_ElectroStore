@@ -1,0 +1,298 @@
+:root
+{
+	--color-principal: #FF7000;
+	--color-fondo: #CCDDFF;
+	--color-texto: #000000;
+	--color-enlaces: #FFFFFF;
+	--color-enlaces-hover: #444444;
+	--color-icono-email: #DDAA00;
+	--color-icono-instagram: #C000A0;
+	--color-icono-facebook: #0000A0;
+	--color-icono-linkedin: #0000D0;
+	--color-icono-telefono: #000070;
+	--color-inicial-boton: #FFA000;
+	--color-final-boton: #FF5000;
+}
+
+/* ------ Modificaciones de la selección de texto ------ */
+*::selection /* Todo el texto que se seleccione tendrá letra de color blanco y fondo tipo naranja */
+{
+	background-color: var(--color-principal);
+	color: #FFFFFF;
+}
+
+.body
+{
+	font-size: 12px;
+	font-family: 'Cambria', sans-serif;
+	background-color: var(--color-fondo);
+	color: var(--color-texto);
+	margin: 0 .6em;
+	display: grid;	
+	grid-gap: 1em;
+}
+
+/* ------ Títulos ------ */
+.titulos
+{
+	font-size: 2em;
+	color: var(--color-principal);
+}
+
+/* ------ Enlaces ------ */
+.header__h1 a, 
+.nav-sitio-web__ul a
+{
+	text-decoration: none;
+	color: var(--color-enlaces);
+}
+
+/* ------ Íconos ------ */
+.nav-sitio-web__ul i
+{
+	color: var(--color-enlaces);
+}
+
+/* ------ Logo y lista de la barra de navegación ------ */
+.header__h1,
+.nav-sitio-web__ul
+{
+	font-size: 1.5em;
+}
+
+/* ------ Imágenes ------ */
+img /* Eliminamos el fondo blanco de las imágenes */
+{
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+}
+
+.header
+{
+	grid-area: header;
+}
+
+/* Logo de la empresa */
+.header__h1 
+{
+	display: inline-block;
+	background-color: var(--color-principal);
+	color: var(--color-enlaces);
+	border-radius: 2em;
+	padding: 5px;
+}
+
+/* Estilo para el enlace dentro del logo de la empresa cuando se hace hover sobre él */
+.header__h1:hover > a
+{
+	color: var(--color-enlaces-hover);
+}
+
+/*------ Barra de navegación para mobile ------*/
+/* Estilos para el nav en general */
+.nav-sitio-web
+{
+	background-color: var(--color-principal);
+	position: sticky;
+	top: 0;
+	z-index: 10; /* Lo defino para que cuando hago scroll y el nav alcance la posición de las imágenes el nav se superponga a estas */
+	grid-area: nav-sitio-web;
+}
+
+/* Estilos para la parte del botón del nav */
+.nav-sitio-web__button
+{
+	margin: 0 5px; /* Márgenes laterales */
+	padding: 0.33em;
+	width: 10%; /* Solo ocupa el 10% del nav-sitio-web__button-container */
+	cursor: pointer;
+}
+
+.nav-sitio-web__button, 
+.nav-sitio-web__button i
+{
+	color: var(--color-enlaces);
+}
+
+/* Estilos para el li-container */
+.nav-sitio-web__li-container
+{
+	display: none; /* Ocultamos los enlaces cuando no se "selecciona" el ícono de las 3 barras laterales */
+}
+
+/* Estilos para los li del nav */
+.nav-sitio-web__li
+{
+	padding: 10px;
+	cursor: pointer;
+}
+
+/* Estilos para los íconos de los li del nav */
+.nav-sitio-web__li i
+{
+	width: 1.33em;
+	box-sizing: border-box;
+}
+
+/* Estilos para el botón cuando se le hace hover */
+.nav-sitio-web__button:hover > i
+{
+	color: var(--color-enlaces-hover);
+}
+
+/* Estilos para el li-container cuando hay hover sobre el nav-sitio-web__ul */
+.nav-sitio-web__ul:hover > .nav-sitio-web__li-container
+{
+	display: block; /* Aparecen los enlaces */
+	background-color: var(--color-principal);
+	position: absolute; /* Cede su espacio en el DOM y se superpone al contenido siguiente */
+	width: 100%;
+}
+
+/* Estilos para los 'i' y los 'a' dentro de li cuando se le hace hover a los li con clase nav-sitio-web__li */
+.nav-sitio-web__li:hover > i,
+.nav-sitio-web__li:hover > a
+{
+	color: var(--color-enlaces-hover);
+}
+
+.footer
+{
+	grid-area: footer;
+}
+
+/* Estilos para todos los íconos del footer */
+.footer i
+{
+	font-size: 2em;
+	margin: .5em 0;
+	min-width: 1.2em;
+}
+
+/* Estilos para el ícono de email */
+.footer .fa-envelope
+{
+	color: var(--color-icono-email);
+}
+
+/* Estilos para el ícono de Instagram */
+.footer .fa-square-instagram
+{
+	color: var(--color-icono-instagram);
+}
+
+/* Estilos para el ícono de Facebook */
+.footer .fa-square-facebook
+{
+	color: var(--color-icono-facebook);
+}
+
+/* Estilos para el ícono de Linkedin */
+.footer .fa-linkedin
+{
+	color: var(--color-icono-linkedin);
+}
+
+/* Estilos para el ícono del teléfono */
+.footer .fa-phone
+{
+	color: var(--color-icono-telefono);
+}
+
+/* Estilo para todos los íconos del footer cuando se les hace hover */
+.footer i:hover
+{
+	color: var(--color-enlaces-hover);
+}
+
+/* Botones */
+.boton-compra,
+.boton,
+.boton-agregar
+{
+	font-size: 1em;
+	background-color: var(--color-principal);
+	color: var(--color-enlaces);
+	outline: none;
+	border: none;
+	border-radius: .5em; /* Esquinas de los botones redondeadas */
+	width: 5em;
+	padding: .5em;
+	cursor: pointer;
+}
+
+.boton-agregar
+{
+	width: 10em;
+}
+
+/* Estilos para el botón de compra de cada producto cuando se hace hover o focus en él*/
+.boton:hover,
+.boton-compra:hover,
+.boton-agregar:hover,
+.boton:focus,
+.boton-compra:focus,
+.boton-agregar:focus
+{
+	background-color: var(--color-inicial-boton);
+}
+
+/* Estilos para el botón de compra de cada producto cuando se hace active en él*/
+.boton:active,
+.boton-compra:active,
+.boton-agregar:active
+{
+	background: linear-gradient(to bottom, var(--color-inicial-boton), var(--color-final-boton));
+}
+
+/* ------ Layouts responsive ------ */
+@media only screen and (min-width: 515px)
+{
+	/* Estilos para el body */
+	.body
+	{
+		font-size: 14px;
+	}
+}
+
+@media only screen and (min-width: 1015px)
+{
+	/* Estilos para el body */
+	.body
+	{
+		font-size: 16px;
+	}
+
+	/* Estilos para la barra de navegación */
+	.nav-sitio-web__button-container
+	{
+		display: none; /* Ocultamos el ícono de las 3 barras laterales del nav para mobile */
+	}
+
+	/* Estilos para el li-container */
+	.nav-sitio-web__li-container
+	{
+		display: block; /* Aparecen los enlaces */
+		position: sticky;
+	}
+
+	/* Estilos para el li-container cuando se hace hover sobre el ul */
+	.nav-sitio-web__ul:hover > .nav-sitio-web__li-container
+	{
+		position: static; /* Cede su espacio en el DOM y se superpone al contenido siguiente */
+	}
+
+	/* Estilos para los li */
+	.nav-sitio-web__li
+	{
+		display: inline-block;
+		padding: 10px;
+	}
+
+	/* Estilos para la lista del nav */
+	.nav-sitio-web__ul
+	{
+		place-items: center;
+		text-align: center;
+	}
+}
